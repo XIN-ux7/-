@@ -1,0 +1,8 @@
+    
+
+### 项目说明
+
+  - 本地搭建环境：IntelliJ IDEA 2019.3.3、maven3.3.9、jdk1.8、tomcat8.0、mysql5.7
+  - 登录地址：http://localhost:8080/yosebook-ssm-maven  用户名/密码：yosebook/1234
+  - 管理员后台登录地址：http://localhost:8080/yosebook-ssm-maven/admin  用户名/密码：liubei/123
+  - 项目访问名称必须为yosebook-ssm-maven，端口也必须是8080，因为前端请求时的项目路径是固定的

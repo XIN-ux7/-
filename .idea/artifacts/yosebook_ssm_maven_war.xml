@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="yosebook-ssm-maven:war">
+    <output-path>$PROJECT_DIR$/图书商城系统/图书商城系统/源码/yosebook-ssm-maven/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>yosebook-ssm-maven</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="yosebook-ssm-maven-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="yosebook-ssm-maven:war exploded" />
+    </root>
+  </artifact>
+</component>
