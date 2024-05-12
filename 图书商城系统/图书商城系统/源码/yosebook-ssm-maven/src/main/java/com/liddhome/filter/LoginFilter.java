@@ -1,38 +1,32 @@
 package com.liddhome.filter;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 public class LoginFilter implements Filter {
 
-	public void destroy() {
-
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// 初始化方法的实现
 	}
 
-	public void doFilter(ServletRequest req,
-			ServletResponse res,
-			FilterChain chain)
-					throws IOException, ServletException {
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		Object user = request.getSession().getAttribute("sessionUser");
-		if(user==null){
+		if (user == null) {
 			request.setAttribute("code", "error");
 			request.setAttribute("msg", "您还未登录！");
 			request.getRequestDispatcher("/jsps/msg.jsp").forward(request, res);
-		}else{
+		} else {
 			chain.doFilter(request, res);
 		}
 	}
 
-	public void init(FilterConfig config) throws ServletException {
-
+	@Override
+	public void destroy() {
+		// 销毁方法的实现
 	}
-
 }

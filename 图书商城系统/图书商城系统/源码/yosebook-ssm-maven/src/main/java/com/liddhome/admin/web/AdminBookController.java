@@ -1,15 +1,16 @@
 package com.liddhome.admin.web;
 
-import java.awt.Image;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.swing.ImageIcon;
+import javax.imageio.ImageIO;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -39,75 +40,55 @@ public class AdminBookController{
 	InputStream in = this.getClass().getClassLoader().
 			getResourceAsStream("config.properties");
 
-	
-	@RequestMapping(value="/addBook.do",method=RequestMethod.POST)
-	public String addBook(ModelMap map,@RequestParam MultipartFile[] fileItem,
-			Book book,Category category)throws IOException{
+
+	@RequestMapping(value="/addBook.do", method=RequestMethod.POST)
+	public String addBook(ModelMap map, @RequestParam MultipartFile[] fileItem, Book book, Category category) throws IOException {
+		// 设置图书所属的分类
 		book.setCategory(category);
-		//fileItem[0]存储的是大图
-		if(fileItem[0].getSize()<=0){
-			map.addAttribute("msg","您还未上传图书大图！");
-			map.addAttribute("parents",categoryService.findParents());
+
+		// 检查是否上传了大图
+		if (fileItem[0].isEmpty()) {
+			map.addAttribute("msg", "您还未上传图书大图！");
+			map.addAttribute("parents", categoryService.findParents());
 			return "/adminjsps/admin/book/add";
 		}
-		String filename = fileItem[0].getOriginalFilename();
-		filename = CommonUtil.uuid()+"_"+filename;
-		if(!filename.toLowerCase().endsWith(".jpg")){
-			map.addAttribute("msg","上传的文件扩展名必须是.jpg格式的");
-			map.addAttribute("parents",categoryService.findParents());
+
+		// 处理大图文件
+		MultipartFile largeImage = fileItem[0];
+		BufferedImage largeImageBuffer = ImageIO.read(largeImage.getInputStream());
+		BufferedImage resizedLargeImage = resizeImage(largeImageBuffer, 350, 350);
+
+		// 设置大图路径给Book对象
+		String largeImageFilename = CommonUtil.uuid() + "_" + largeImage.getOriginalFilename();
+		String largeImagePath = saveImage(resizedLargeImage, largeImageFilename);
+		book.setImage_w("book_img/" + largeImagePath);
+
+		// 检查是否上传了小图
+		if (fileItem[1].isEmpty()) {
+			map.addAttribute("msg", "您还未上传图书小图！");
+			map.addAttribute("parents", categoryService.findParents());
 			return "/adminjsps/admin/book/add";
 		}
-		prop.load(in);
-		String savepath = prop.getProperty("savePath");
-		File destFile = new File(savepath,filename);
-		fileItem[0].transferTo(destFile);
-		//判断图片尺寸
-		ImageIcon icon = new ImageIcon(destFile.getAbsolutePath());
-		Image image = icon.getImage();
-		if(image.getWidth(null)>350 || image.getHeight(null)>350){
-			map.addAttribute("msg","您上传的图片尺寸超出了350*350");
-			map.addAttribute("parents",categoryService.findParents());
-			destFile.delete();
-			return "/adminjsps/admin/book/add";
-		}
-		//把大图图片的路径设置给Book对象
-		book.setImage_w("book_img/"+filename);
-		
-		
-		if(fileItem[1].getSize()<=0){
-			map.addAttribute("msg","您还未上传图书小图！");
-			map.addAttribute("parents",categoryService.findParents());
-			return "/adminjsps/admin/book/add";
-		}
-		filename = fileItem[1].getOriginalFilename();
-		filename = CommonUtil.uuid()+"_"+filename;
-		if(!filename.toLowerCase().endsWith(".jpg")){
-			map.addAttribute("msg","上传的文件扩展名必须是.jpg格式的");
-			map.addAttribute("parents",categoryService.findParents());
-			return "/adminjsps/admin/book/add";
-		}
-		destFile = new File(savepath,filename);
-		fileItem[1].transferTo(destFile);
-		//判断图片尺寸
-		icon = new ImageIcon(destFile.getAbsolutePath());
-		image = icon.getImage();
-		if(image.getWidth(null)>350 || image.getHeight(null)>350){
-			map.addAttribute("msg","您上传的图片尺寸超出了350*350");
-			map.addAttribute("parents",categoryService.findParents());
-			destFile.delete();
-			return "/adminjsps/admin/book/add";
-		}
-		//把小图图片的路径设置给Book对象
-		book.setImage_b("book_img/"+filename);
-		
-		//添加图书到数据库
+
+		// 处理小图文件
+		MultipartFile smallImage = fileItem[1];
+		BufferedImage smallImageBuffer = ImageIO.read(smallImage.getInputStream());
+		BufferedImage resizedSmallImage = resizeImage(smallImageBuffer, 200, 200);
+
+		// 设置小图路径给Book对象
+		String smallImageFilename = CommonUtil.uuid() + "_" + smallImage.getOriginalFilename();
+		String smallImagePath = saveImage(resizedSmallImage, smallImageFilename);
+		book.setImage_b("book_img/" + smallImagePath);
+
+		// 添加图书到数据库
 		book.setBid(CommonUtil.uuid());
 		bookService.addBook(book);
 		map.addAttribute("msg", "添加图书成功！");
-		
+
 		return "/adminjsps/msg";
 	}
-	
+
+
 	@RequestMapping("/delete.do")
 	public String delete(ModelMap map,String bid)throws IOException {
 		Book book = bookService.load(bid);
@@ -233,4 +214,21 @@ public class AdminBookController{
 		return children;
 	}
 
+	private BufferedImage resizeImage(BufferedImage image, int width, int height) {
+		Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		BufferedImage resizedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		Graphics2D graphics = resizedImage.createGraphics();
+		graphics.drawImage(scaledImage, 0, 0, null);
+		graphics.dispose();
+		return resizedImage;
+	}
+
+	private String saveImage(BufferedImage image, String filename) throws IOException {
+		prop.load(in);
+		String savePath = prop.getProperty("savePath");
+		String imagePath = savePath + filename;
+		File destFile = new File(imagePath);
+		ImageIO.write(image, "jpg", destFile);
+		return filename;
+	}
 }

@@ -1,15 +1,12 @@
 package com.liddhome.service;
 
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.sql.SQLException;
-import java.text.MessageFormat;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
-import javax.mail.MessagingException;
-import javax.mail.Session;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +14,7 @@ import org.springframework.stereotype.Service;
 import com.liddhome.dao.UserDao;
 import com.liddhome.entity.User;
 import com.liddhome.util.commons.CommonUtil;
-import com.liddhome.util.mail.Mail;
-import com.liddhome.util.mail.MailUtil;
+
 @Service("userService")
 public class UserServiceImpl implements UserService{
 	@Autowired

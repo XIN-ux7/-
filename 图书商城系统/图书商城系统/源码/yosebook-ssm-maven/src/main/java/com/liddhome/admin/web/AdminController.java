@@ -1,8 +1,9 @@
 package com.liddhome.admin.web;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,7 +25,7 @@ public class AdminController{
 	}
 	
 	@RequestMapping("/login.do")
-	public String login(ModelMap map,String adminname,String adminpwd,HttpSession session){
+	public String login(ModelMap map, String adminname, String adminpwd, HttpSession session){
 		if(adminname==null || adminname.trim().isEmpty()){
 			map.addAttribute("msg", "管理员账户不能为空！");
 			return "/adminjsps/login";

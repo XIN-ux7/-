@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,7 +25,7 @@ public class CartItemController{
 	private CartItemService cartItemService;
 	
 	@RequestMapping("/loadCartItems.do")
-	public String loadCartItems(HttpServletRequest request,ModelMap map,String total){
+	public String loadCartItems(HttpServletRequest request, ModelMap map, String total){
 		String cartItemIds = request.getParameter("cartItemIds");
 		double doublTotal = Double.parseDouble(total);
 		List<CartItem> cartItems = cartItemService.loadCartItems(cartItemIds);

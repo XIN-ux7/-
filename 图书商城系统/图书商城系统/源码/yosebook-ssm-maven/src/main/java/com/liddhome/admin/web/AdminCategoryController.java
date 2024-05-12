@@ -3,8 +3,8 @@ package com.liddhome.admin.web;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletException;
 
+import jakarta.servlet.ServletException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
