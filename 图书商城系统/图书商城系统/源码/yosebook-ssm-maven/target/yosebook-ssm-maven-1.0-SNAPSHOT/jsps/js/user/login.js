@@ -1,33 +1,7 @@
 $(function() {
+
 	/*
-	 * 1. 让登录按钮在得到和失去焦点时切换图片
-	 */
-	/*$("#submit").hover(
-		function() {
-			$("#submit").attr("src", "/goods/images/login2.jpg");
-		},
-		function() {
-			$("#submit").attr("src", "/goods/images/login1.jpg");
-		}
-	);*/
-	
-	/*
-	 * 2. 给注册按钮添加submit()事件，完成表单校验
-	 */
-	/*$("#btnLogin").submit(function(){
-		$("#msg").text("");
-		var bool = true;
-		$(".input").each(function() {
-			var inputName = $(this).attr("name");
-			if(!invokeValidateFunction(inputName)) {
-				bool = false;
-			}
-		});
-		return bool;
-	});*/
-	
-	/*
-	 * 3. 输入框得到焦点时隐藏错误信息
+	 *  输入框得到焦点时隐藏错误信息
 	 */
 	$(".input").focus(function() {
 		var inputName = $(this).attr("name");
@@ -35,7 +9,7 @@ $(function() {
 	});
 	
 	/*
-	 * 4. 输入框推动焦点时进行校验
+	 * 输入框推动焦点时进行校验
 	 */
 	$(".input").blur(function() {
 		var inputName = $(this).attr("name");
@@ -50,7 +24,7 @@ $(function() {
 function invokeValidateFunction(inputName) {
 	inputName = inputName.substring(0, 1).toUpperCase() + inputName.substring(1);
 	var functionName = "validate" + inputName;
-	return eval(functionName + "()");	
+	return eval(functionName + "()");
 }
 
 /*
@@ -91,39 +65,41 @@ function validateLoginpass() {
 	return bool;
 }
 
+
+//删除！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
 /*
  * 校验验证码
  */
-function validateVerifyCode() {
-	var bool = true;
-	$("#verifyCodeError").css("display", "none");
-	var value = $("#verifyCode").val();
-	if(!value) {//非空校验
-		$("#verifyCodeError").css("display", "");
-		$("#verifyCodeError").text("验证码不能为空！");
-		bool = false;
-	} else if(value.length != 4) {//长度不为4就是错误的
-		$("#verifyCodeError").css("display", "");
-		$("#verifyCodeError").text("错误的验证码！");
-		bool = false;
-	} else {//验证码是否正确
-		$.ajax({
-			cache: false,
-			async: false,
-			type: "POST",
-			dataType: "json",
-			data: {verifyCode: value},
-			url: "/yosebook-ssm-maven/user/ajaxValidateVerifyCode.do",
-			success: function(flag) {
-				console.log(flag);
-				console.log(value);
-				if(!flag) {
-					$("#verifyCodeError").css("display", "");
-					$("#verifyCodeError").text("验证码错误！");
-					bool = false;					
-				}
-			}
-		});
-	}
-	return bool;
-}
+// function validateVerifyCode() {
+// 	var bool = true;
+// 	$("#verifyCodeError").css("display", "none");
+// 	var value = $("#verifyCode").val();
+// 	if(!value) {//非空校验
+// 		$("#verifyCodeError").css("display", "");
+// 		$("#verifyCodeError").text("验证码不能为空！");
+// 		bool = false;
+// 	} else if(value.length != 4) {//长度不为4就是错误的
+// 		$("#verifyCodeError").css("display", "");
+// 		$("#verifyCodeError").text("错误的验证码！");
+// 		bool = false;
+// 	} else {//验证码是否正确
+// 		$.ajax({
+// 			cache: false,
+// 			async: false,
+// 			type: "POST",
+// 			dataType: "json",
+// 			data: {verifyCode: value},
+// 			url: "/yosebook-ssm-maven/user/ajaxValidateVerifyCode.do",
+// 			success: function(flag) {
+// 				console.log(flag);
+// 				console.log(value);
+// 				if(!flag) {
+// 					$("#verifyCodeError").css("display", "");
+// 					$("#verifyCodeError").text("验证码错误！");
+// 					bool = false;
+// 				}
+// 			}
+// 		});
+// 	}
+// 	return bool;
+// }

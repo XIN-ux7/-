@@ -44,6 +44,7 @@ public class AdminBookController{
 	public String addBook(ModelMap map,@RequestParam MultipartFile[] fileItem,
 			Book book,Category category)throws IOException{
 		book.setCategory(category);
+		//fileItem[0]存储的是大图
 		if(fileItem[0].getSize()<=0){
 			map.addAttribute("msg","您还未上传图书大图！");
 			map.addAttribute("parents",categoryService.findParents());

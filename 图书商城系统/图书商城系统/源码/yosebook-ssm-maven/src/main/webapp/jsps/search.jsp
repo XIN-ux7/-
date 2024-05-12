@@ -10,39 +10,38 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <style type="text/css">
-body {
-	margin-top: 5px;
-	margin-bottom: 0px;
-	margin-left: 200px;
-	color: #404040;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-input {
-	width: 300px;
-	height: 30px;
-	border-style: solid;
-	margin: 0px;
-	margin-left: 110px;
-	margin-top: 10px;
-	border-color: #15B69A;
-    border-radius: 3px;
-}
+    form {
+        text-align: center;
+    }
 
-a {
-	text-transform: none;
-	text-decoration: none;
-	border-width: 0px;
-    color:#15B69A;
-}
+    input {
+        width: 300px;
+        height: 30px;
+        border-style: solid;
+        border-color: #a2d7dd;
+        border-radius: 3px;
+        margin-top: 10px;
+    }
 
-a:hover {
-	border-width: 0px;
-    color:#8AD700;
-}
+    a {
+        text-transform: none;
+        text-decoration: none;
+        color: #a2d7dd;
+    }
 
-span {
-	margin: 0px;
-}
+    a:hover {
+        color: #8AD700;
+    }
+
 </style>
 </head>
 
@@ -52,8 +51,7 @@ span {
         <input type="text" name="bname" />
         <span>
             <a href="javascript:document.getElementById('form1').submit();">
-                <img style="margin-top: 10px; border-radius: 3px;" align="top" border="0"
-                src="../images/btn.bmp" />
+                搜  索
             </a>
             <a href="<c:url value='/jsps/gj.jsp'/>" style="font-size: 11pt;font-family: 'microsoft yahei';"
             target="body">高级搜索</a>

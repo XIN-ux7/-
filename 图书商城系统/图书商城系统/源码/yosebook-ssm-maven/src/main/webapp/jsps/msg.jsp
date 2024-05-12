@@ -46,7 +46,7 @@
 a {text-decoration: none;}
 a:visited {color: #018BD3;}
 a:hover {color:#FF6600; text-decoration: underline;}
-}
+
 </style>
 
   </head>

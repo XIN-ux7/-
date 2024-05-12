@@ -5,29 +5,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>修改密码</title>
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+<title>修改密码</title>、
 <link rel="stylesheet" type="text/css"
     href="<c:url value='/css/css.css'/>">
 <link rel="stylesheet" type="text/css"
     href="<c:url value='/jsps/css/user/pwd.css'/>">
 <script type="text/javascript"
     src="<c:url value='/jquery/jquery-1.5.1.js'/>"></script>
-<script src="<c:url value='/js/common.js'/>"></script>
+    <%--    删除！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！--%>
+<%--<script src="<c:url value='/js/common.js'/>"></script>--%>
 <script src="<c:url value='/jsps/js/user/pwd.js'/>"></script>
 </head>
 
 <body>
-    <header>
-     <img src="<c:url value='/images/ysmall_logo.png'/>">
-     <img src="<c:url value='/images/welcome_mdfPwd.png'/>" class="welcome_mdfPwd">
-    </header>
-    <!-- <div class="div0">
-    	<span>修改密码</span>
-    </div>
- -->
+<%--    删除！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！--%>
+<%--    <header>--%>
+<%--     <img src="<c:url value='/images/ysmall_logo.png'/>">--%>
+<%--     <img src="<c:url value='/images/welcome_mdfPwd.png'/>" class="welcome_mdfPwd">--%>
+<%--    </header>--%>
+
     <section>
         <div class="div">
             <form action="<c:url value='/user/updatePassword.do'/>" method="post"
@@ -55,21 +51,6 @@
                         <td class="inputTd"><input class="input" type="password"
                             name="reloginpass" id="reloginpass" value="${user.reloginpass }" /></td>
                         <td><label id="reloginpassError" class="error"></label></td>
-                    </tr>
-                    <!-- <tr>
-                        <td align="right"></td>
-                        <td><img id="vCode" src="/yosebook/verifyCode" title="点击更换" 
-                        onclick="this.setAttribute('src','/yosebook/verifyCode?'+Math.random());"/>
-                         <a href="javascript:_change();">看不清，换一张</a></td>
-                    </tr> -->
-                    <tr>
-                        <td align="right" class="textTd">验证码：</td>
-                        <td class="inputTd"><input class="input" type="text"
-                            name="verifyCode" id="verifyCode" value="" />
-                            <img id="vCode" src="/yosebook-ssm-maven/verifyCode" title="点击更换"
-                        onclick="this.setAttribute('src','/yosebook-ssm-maven/verifyCode?'+Math.random());"/>
-                            </td>
-                        <td><label id="verifyCodeError" class="error"></label></td>
                     </tr>
                     <tr>
                         <td align="right"></td>

@@ -44,11 +44,11 @@ function Q6MenuBar(objName, barName) {
 		menuContentColor : "rgb(255,255,255)"
 	};
 	this.colors[2] = {
-		itemBgMoveColor : "#777",
-		itemBorderMoveColor : "#777",
-		menuBgColor : "rgb(78,78,78)",// 38
-		menuBorderColor : "rgb(78,78,78)",// 100
-		itemBgColor : "#999",
+		itemBgMoveColor : "#758a99",
+		itemBorderMoveColor : "#758a99",
+		menuBgColor : "#758a99",
+		menuBorderColor : "#758a99",
+		itemBgColor : "#89a5b9",
 		itemBorderColor : "#999",
 		itemMoveColor : "rgb(255,255,255)",
 		itemColor : "rgb(255,255,255)",
@@ -80,12 +80,12 @@ function Q6MenuBar(objName, barName) {
 		menuContentColor : "rgb(76,48,0)"
 	};
 	this.colors[4] = {
-		menuBgColor : "#15B69A",
-		menuBgMoveColor:"#15B680",
+		menuBgColor : "#a2d7dd",
+		menuBgMoveColor:"#a2d7dd",
 		menuBorderColor : "gray",
-		itemBgColor : "#6ee7cc",
-		itemBorderColor : "#6ee7cc",
-		itemBgMoveColor : "rgb(13,133,96)",
+		itemBgColor : "#bce2e8",
+		itemBorderColor : "#bce2e8",
+		itemBgMoveColor : "#71c9ce",
 		itemBorderMoveColor : "rgb(13,133,96)",
 		itemMoveColor : "#FFFFFF",
 		itemColor : "#555",

@@ -66,16 +66,6 @@
         </c:otherwise>
     </c:choose>
 </c:forEach>
-    <%-- 显示页码列表 --%>
-          
-          <!-- <a href="" class="aBtn">2</a>
-          <a href="" class="aBtn">3</a>
-          <a href="" class="aBtn">4</a>
-          <a href="" class="aBtn">5</a>
-          <a href="" class="aBtn">6</a> -->
-
-    
-    <%-- 显示点点点 --%>
     
     <c:if test="${end<pb.tp }">
          <span class="spanApostrophe">...</span> 

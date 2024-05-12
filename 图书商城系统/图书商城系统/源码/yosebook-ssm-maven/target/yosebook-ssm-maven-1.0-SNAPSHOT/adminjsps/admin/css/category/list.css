@@ -1,5 +1,5 @@
 body {
-	background: #4E4E4E;
+	background: #758a99;
 	font-family: "microsoft yahei";
 }
 /* ::-webkit-scrollbar{
@@ -12,7 +12,7 @@ table {
 	font-size: 14px;
 	border:0;
 	width: 65%;
-	background: #ccc;
+	background: #c2ccd0;
 	border-radius: 6px;
 }
 th{
@@ -32,7 +32,7 @@ td {
 .trTitle {
 	border-radius: 6px;
 	border:0;
-	background: #555;
+	background: #c2ccd0;
 	color: #fff;
 }
 

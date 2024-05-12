@@ -6,9 +6,7 @@
 <html>
 <head>
 <title>高级查询</title>
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 <style type="text/css">
 table {
 	color: #404040;
@@ -27,15 +25,15 @@ input[type="submit"],input[type="reset"]{
     margin-top:5px;
     width:89px;
     height:30px;
-    border:1px solid #15B69A;
+    border:1px solid #a2d7dd;
     border-radius: 5px;
-    background: #15B69A;
+    background: #a2d7dd;
     font-family: "microsoft yahei";
     font-size:15px;
     color:white;
 }
 input[type="submit"]:hover,input[type="reset"]:hover{
-    background: #15B670;
+    background: #bce2e8;
     cursor: pointer;
 }
 </style>

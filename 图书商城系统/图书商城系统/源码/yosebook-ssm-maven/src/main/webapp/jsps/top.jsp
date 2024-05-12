@@ -12,9 +12,9 @@
 	-->
 <style type="text/css">
 body {
-	background: #15B69A;
+	background: #a2d7dd;
 	margin: 0px;
-	color: #ffffff;
+	color: black;
 	font-family: "microsoft yahei";
     opacity: 50%;
 }
@@ -22,11 +22,15 @@ body {
     height:75px;
     margin-left:12px;
     margin-bottom: 10px;
+    font-size: 50px;
+    font-style: italic;
+    text-shadow: 3px 3px #a79f9f;
+    color: #2e4276;
 }
 a {
 	text-transform: none;
 	text-decoration: none;
-	color: #ffffff;
+	color: black;
 	font-weight: normal;
 }
 
@@ -38,8 +42,7 @@ a:hover {
 
 <body>
     <div>
-        <!-- <h1 style="text-align: center;">Yosebook书城</h1> -->
-        <img src="<c:url value='/images/ybig_logo.png'/>" class="logo">
+        <div class="logo">YW书城</div>
         <div style="font-size: 10pt; line-height: 10px;">
     <c:choose>
         <c:when test="${empty sessionScope.sessionUser }">
@@ -48,7 +51,7 @@ a:hover {
         </c:when>
         <c:otherwise>
         &nbsp;&nbsp;&nbsp;&nbsp;
-             优思会员：${sessionUser.loginname }&nbsp;&nbsp;|&nbsp;&nbsp; 
+             YW会员：${sessionUser.loginname }&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="<c:url value='/cartItem/myCart.do'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="<c:url value='/order/myOrders.do'/>" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="<c:url value='/jsps/user/pwd.jsp'/>" target="body">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;

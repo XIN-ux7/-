@@ -195,7 +195,7 @@
         </tr>
         <tr>
             <td colspan="7" align="right">
-                <a href="javascript:jiesuan();" id="jiesuan" class="jiesuan"></a>
+                <a href="javascript:jiesuan();" id="jiesuan" class="jiesuan">结    算</a>
             </td>
         </tr>
     </table>

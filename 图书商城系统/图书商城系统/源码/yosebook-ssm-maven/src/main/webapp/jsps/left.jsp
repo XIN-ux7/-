@@ -8,9 +8,7 @@
 <title>left</title>
 <base target="body" />
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 <script type="text/javascript"
     src="<c:url value='/jquery/jquery-1.5.1.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/menu/mymenu.js'/>"></script>
@@ -22,7 +20,7 @@
 /*
  * 第一个参数必须和变量名相同
  */
-	var bar = new Q6MenuBar("bar", "Yosebook书城");
+	var bar = new Q6MenuBar("bar", "YW书城");
 	$(function() {
 		bar.colorStyle = 4; //配色样式，共有5种
 		bar.config.imgDir = "<c:url value='/menu/img/'/>";

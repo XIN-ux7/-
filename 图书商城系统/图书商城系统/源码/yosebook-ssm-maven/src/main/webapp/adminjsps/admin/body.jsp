@@ -10,7 +10,7 @@
 	-->
     <style type="text/css">
         body{
-            background: #4E4E4E;
+            background: #758a99;
         }
         img{
             width: 800px;
@@ -18,16 +18,17 @@
             margin-left: 270px;
         }
         p{
-            text-align: center;
-            font-size: 38px;
-            font-family: "microsoft yahei";
-            color: #8AD700;
+          text-align: center;
+          font-size: 38px;
+          font-family: "microsoft yahei";
+          color: #e0eee8;
+          font-style: italic;
+          margin-top: 200px;
         }
     </style>
   </head>
   
   <body style="margin: 0px;">
-    <img src="<c:url value='/images/ybig_logo.png'/>" />
-    <p>欢迎使用Yosebook书城！</p>
+    <p>欢迎使用YW书城！</p>
   </body>
 </html>

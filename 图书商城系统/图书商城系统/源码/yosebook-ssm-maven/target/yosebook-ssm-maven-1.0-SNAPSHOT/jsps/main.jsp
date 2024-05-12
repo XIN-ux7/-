@@ -8,20 +8,16 @@
 
 <title>main</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 <link rel="stylesheet" type="text/css"
     href="<c:url value='/jsps/css/main.css'/>">
 </head>
 
 <body>
-    <%-- <header>
-        <img src="<c:url value='/images/ybig_logo.png'/>">
-    </header> --%>
     <table class="table" align="center" style="border-radius: 3px;">
         <tr class="trTop">
-            <td colspan="2" class="tdTop"><iframe frameborder="0"
+            <td colspan="2" class="tdTop">
+                <iframe frameborder="0"
                     src="<c:url value='/jsps/top.jsp'/>" name="top"></iframe>
             </td>
         </tr>

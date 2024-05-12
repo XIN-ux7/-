@@ -7,18 +7,18 @@ body {
 }
 
 .table {
-	width: 1200px;
+	width: 100%;
 	height: 100%;
-	border: 1px solid #15B69A;
+	border: 1px solid #a2d7dd;
 	border-collapse: collapse;
 }
 
 .table td {
-	border: 1px solid #15B69A;
+	border: 1px solid #a2d7dd;
 }
 
 .trTop {
-	background: #15B69A;
+	background: #a2d7dd;
 }
 
 .tdTop {

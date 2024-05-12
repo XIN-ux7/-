@@ -85,7 +85,7 @@ td .bookname {
 
 #pay {
 	margin-top: 10px;
-	background: #15B695;
+	background: #3498db;
 	display: inline-block;
 	height: 30px;
 	width: 110px;
@@ -96,7 +96,7 @@ td .bookname {
 	border-radius: 5px;
 }
 #pay:hover{
-	background: #0D8560;
+	background: #287ee0;
 }
 .price_t {
 	font-size: 15px;
@@ -121,7 +121,7 @@ a {
 
 #confirm {
 	/* background: url(/yosebook/images/confirm.jpg) no-repeat; */
-	background: #15B695;
+	background: #3498db;
 	display: inline-block;
 	height: 30px;
 	width: 110px;
@@ -133,7 +133,7 @@ a {
 	margin-top: 10px;
 }
 #confirm:hover{
-	background: #0D8560;
+	background: #287ee0;
 }
 #cancel {
 	background: #888;

@@ -13,8 +13,8 @@
 body {
 	font-size: 14px;
 	font-family: "microsoft yahei";
-	background: rgb(78, 78, 78);
-	color: #fff;
+	background: #758a99;/*页面背景*/
+	color: #e0eee8;/*页面文本*/
 }
 
 p {
@@ -22,17 +22,16 @@ p {
 	line-height: 30px;
 	font-size: 30px;
 	margin-top: 25px;
-	color: #8AD700;
 }
 
 a {
-	color: #bbb;
+	color: #e0eee8;
 	margin-left: 6px;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #fff;
+	color: #bbcdc5;
 }
 
 .bodr_lf {
@@ -45,9 +44,9 @@ a:hover {
 </head>
 
 <body>
-    <p>Yosebook后台管理</p>
+    <p>YW后台管理</p>
     <div style="line-height: 10px;">
-        <span style="margin-left: 10px; color: #fff;">管理员：${sessionAdmin.adminname }</span> <a
+        <span style="margin-left: 10px; color: #e0eee8;">管理员：${sessionAdmin.adminname }</span> <a
             target="_top" href="<c:url value='/admin/admin/quit.do'/>">退出</a>
         <span style="padding-left: 50px;"> <a
             href="<c:url value='/admin/category/findAll.do'/>">分类管理</a>

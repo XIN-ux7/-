@@ -9,31 +9,23 @@
     
     <title>body</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">	
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 <style type="text/css">
-/* a {text-decoration: none;} */
+
     p{
         text-align:center;
         margin:50px auto;  
         font-family: "microsoft yahei";
-        /* color:#15B69A;  */
-        color:#8AD700;
+        color: #a2d7dd;
         font-size:42px;
         font-weight: normal;
-    }
-    img{
-        width:60%;
-        height:170px;
-        margin-top:60px;
-        margin-left:190px;
+        margin-top: 200px;
+        font-style: italic;
     }
 </style>
   </head>
   
   <body>
-    <img src="<c:url value='/images/ybig_logo.png'/>">
-    <p>欢迎进入Yosebook书城</p>
+    <p>欢迎进入YW书城！</p>
   </body>
 </html>

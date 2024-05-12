@@ -5,9 +5,7 @@
 <html>
 <head>
 <title>My JSP 'mgs.jsp' starting page</title>
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 
 </head>
 <style type="text/css">

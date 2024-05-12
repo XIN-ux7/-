@@ -47,13 +47,18 @@ input[type="checkbox"]:hover{
 }
 
 .jiesuan {
-	background: url(/yosebook-ssm-maven/images/icon.png) no-repeat;
+	background: #bce2e8;
+	color: white;
 	display: inline-block;
 	background-position: 0 -35px;
 	height: 40px;
 	width: 190px;
 	margin: 0;
 	border-radius: 5px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	font-weight: 800;
 }
 
 .kill {
@@ -65,7 +70,7 @@ input[type="checkbox"]:hover{
 }
 
 .jiesuan:HOVER {
-	background: url(/yosebook-ssm-maven/images/icon.png) no-repeat;
+	background: #a2d7dd;
 	display: inline-block;
 	background-position: 0 -75px;
 	height: 40px;

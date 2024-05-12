@@ -17,6 +17,7 @@
     a{
         margin: 20px;
         font-size: 20px;
+        color: #a1afc9;
         text-decoration: none;
     }
     a:hover{
@@ -37,6 +38,6 @@
         <a href="<c:url value='/admin/book/addPre.do'/>">添加图书</a>
         <a href="<c:url value='/adminjsps/admin/book/gj.jsp'/>">高级搜索</a>
     </p>
-    <img src="/yosebook-ssm-maven/images/ybig_logo.png">
+
 </body>
 </html>

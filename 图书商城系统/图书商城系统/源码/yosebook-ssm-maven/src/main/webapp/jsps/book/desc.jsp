@@ -65,7 +65,7 @@
                              我要买：<input id="cnt" style="width: 40px; text-align: center;"
                         type="text" name="quantity" value="1" />件
                 </form>
-                <a id="btn" href="javascript:$('#form1').submit();"></a>
+                <a id="btn" href="javascript:$('#form1').submit();">加入购物车</a>
             </div>
         </div>
     </div>
